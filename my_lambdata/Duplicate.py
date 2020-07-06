@@ -1,8 +1,10 @@
 import numpy as np
 import pandas as pd
 
+df = pd.read_csv(
+    'https://drive.google.com/uc?export=download&id=1SwmEQQgzZHwuePHvzVJ8Sb6rzDce24Sz')
 
-def getDuplicateColumns(X):
+def getDuplicateColumns(df):
     '''
     Get a list of duplicate columns.
     It will iterate over all the columns in dataframe and find the columns whose contents are duplicate.
@@ -11,21 +13,21 @@ def getDuplicateColumns(X):
     '''
     duplicateColumnNames = set()
     # Iterate over all the columns in dataframe
-    for x in range(X.shape[1]):
+    for x in range(df.shape[1]):
         # Select column at xth index.
-        col = X.iloc[:, x]
+        col = df.iloc[:, x]
         # Iterate over all the columns in DataFrame from (x+1)th index till end
-        for y in range(x + 1, X.shape[1]):
+        for y in range(x + 1, df.shape[1]):
             # Select column at yth index.
-            otherCol = X.iloc[:, y]
+            otherCol = df.iloc[:, y]
             # Check if two columns at x and y index are equal
             if col.equals(otherCol):
-                duplicateColumnNames.add(X.columns.values[y])
+                duplicateColumnNames.add(df.columns.values[y])
     return list(duplicateColumnNames)
 
 
     # Get list of duplicate columns
-duplicateColumnNames = getDuplicateColumns(X)
-print('Duplicate Columns in X are as follows')
+duplicateColumnNames = getDuplicateColumns(df)
+print('Duplicate Columns in df are as follows')
 for col in duplicateColumnNames:
     print('Column name : ', col)
