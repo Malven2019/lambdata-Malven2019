@@ -12,7 +12,7 @@ As per the instructions "Find at least 2 things to compliment and at least 1 con
 
 
 
-**Criticism:** Does it actually work? The _ _ init_ _() )_ is empty, and you only call numpy as np and pandas as pd, but I understand train test split requires a seperate sklearn package to work properly which may have to be added into the code on split.py. If I imported your package without anything else imported will
+**Criticism:** Does it actually work? The _ _ init_ _()  is empty, and you only call numpy as np and pandas as pd, but I understand train test split requires a seperate sklearn package to work properly which may have to be added into the code on split.py. If I imported your package without anything else imported will
           all your functions work?
             
             * This critism may not be accurate as I didn't test out the package myself.
